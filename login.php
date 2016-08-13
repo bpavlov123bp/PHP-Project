@@ -8,6 +8,7 @@ session_unset();
         <title>Log In</title>
     </head>
     <body>
+    <?php include "header.php"; ?>
         <form method="post" action="movie1.php">
             <table border="0">
                 <tr>
