@@ -27,13 +27,24 @@ else
     echo "Click here to see information about my favorite movie!";
     echo "</a>";
     echo "<br/>";
-    echo "<a href='moviesite.php'>";
-    echo "Click here to see my top 10 movies.";
+    echo "Or choose how many movies you would like to see:";
     echo "</a>";
-    echo "<br/>";
-    echo "<a href='moviesite.php?sorted=true'>";
-    echo "Clic here to see my top 10 movies, sorted alphabetically";
-    echo "</a>";
+    echo "<br>";
     ?>
+    <form method="post" action="moviesite.php">
+        <table>
+            <tr>
+                <td>Enter number of movies (up to 10);</td>
+                <td><input type="text" name="num"></td>
+            </tr>
+            <tr>
+                <td>Check if you want the list sorted alphabeticaly:</td>
+                <td><input type="checkbox" name="sorted"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="Submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
     </body>
 </html>

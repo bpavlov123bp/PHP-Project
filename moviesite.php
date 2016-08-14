@@ -31,16 +31,21 @@ if($_SESSION['authuser'] != 1)
     }
     else
     {
-        echo "My top 10 movies are: <br>";
+        echo "My top ".$_POST['num']." movies are:<br>";
         if(isset($_REQUEST['sorted']))
         {
             sort($favmovie);
         }
-            foreach ($favmovie as $value)
-            {
-                echo $value;
-                echo "<br/>\n";
-            }
+        $numlist = 1;
+        while($numlist <= $_POST['num'])
+        {
+            echo $numlist;
+            echo ". ";
+            echo pos($favmovie);
+            next($favmovie);
+            echo "<br>\n";
+            $numlist++;
+        }
     }
     ?>
     </body>
