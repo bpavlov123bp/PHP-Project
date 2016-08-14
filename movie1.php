@@ -26,13 +26,13 @@ else
     echo "<a href='moviesite.php?favmovie=$myfavmovie'>";
     echo "Click here to see information about my favorite movie!";
     echo "</a>";
-    echo "<br>";
-    echo "<a href='moviesite.php?movienum=5'>";
-    echo "Click here to see my top 5 movies";
+    echo "<br/>";
+    echo "<a href='moviesite.php'>";
+    echo "Click here to see my top 10 movies.";
     echo "</a>";
-    echo "<br>";
-    echo "<a href='moviesite.php?movienum=10'>";
-    echo "Click here to see my to 10 movies";
+    echo "<br/>";
+    echo "<a href='moviesite.php?sorted=true'>";
+    echo "Clic here to see my top 10 movies, sorted alphabetically";
     echo "</a>";
     ?>
     </body>

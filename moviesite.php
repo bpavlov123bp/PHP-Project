@@ -15,22 +15,8 @@ if($_SESSION['authuser'] != 1)
     <body>
     <?php include "header.php"; ?>
     <?php
-    function listmovies_1()
-    {
-        echo "1. Life of Brian<br/>";
-        echo "2. Stripes<br/>";
-        echo "3. Office Space<br/>";
-        echo "4. The Holy Grail<br/>";
-        echo "5. Matrix<br/>";
-    }
-    function listmovie_2()
-    {
-        echo "6. Terminator 2<br/>";
-        echo "7. Star Wars<br/>";
-        echo "8. Close Encounters if the Third Kind<br/>";
-        echo "9. Sixteen Candles<br/>";
-        echo "10. Caddyshack<br/>";
-    }
+    $favmovie = array("Life of Brian", "Office Space", "The Holly Grail", "Matrix",
+        "Terminator 2", "Star Wars", "Close Encounters of the Third Kind", "Sixteen Candles", "Caddyshack");
     if(isset($_REQUEST['favmovie']))
     {
         echo "Welcome to our site, ";
@@ -45,12 +31,16 @@ if($_SESSION['authuser'] != 1)
     }
     else
     {
-        echo "My top ";
-        echo $_REQUEST['movienum'];
-        echo " movies are: ";
-        echo "<br/>";
-        listmovies_1();
-        if($_REQUEST['movienum'] == 10) listmovie_2();
+        echo "My top 10 movies are: <br>";
+        if(isset($_REQUEST['sorted']))
+        {
+            sort($favmovie);
+        }
+            foreach ($favmovie as $value)
+            {
+                echo $value;
+                echo "<br/>\n";
+            }
     }
     ?>
     </body>
